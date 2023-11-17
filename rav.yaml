@@ -1,0 +1,24 @@
+scripts:
+  runserver: uvicorn src.main:app --reload
+  install: venv/bin/python -m pip install -r requirements.txt
+  build:
+    - docker build -f Dockerfile -t mohaseb-test .
+    - docker image prune -f
+  run: docker run -p 8080:8000 --rm --name mohaseb-test -it mohaseb-test
+  shell: docker exec -it mohaseb-test /bin/bash
+  build-run:
+    - rav run build
+    - rav run run
+  configure:
+    - gcloud auth configure-docker us-central1-docker.pkg.dev
+    - gcloud artifacts repositories create mohaseb-test-repo --repository-format=docker --location=us-central1
+  push:
+    - docker build -f Dockerfile -t mohaseb-test .
+    - docker tag mohaseb-test us-central1-docker.pkg.dev/mohaseb-app/mohaseb-test-repo/mohaseb-test:latest
+    - docker push us-central1-docker.pkg.dev/mohaseb-app/mohaseb-test-repo/mohaseb-test:latest
+  deploy:
+    - gcloud run deploy mohaseb-test-run --image=us-central1-docker.pkg.dev/mohaseb-app/mohaseb-test-repo/mohaseb-test:latest
+      --allow-unauthenticated --region=us-central1 --project=mohaseb-app
+  push-deploy:
+    - rav run push
+    - rav run deploy

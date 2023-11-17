@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Al-Rashed Riyadh Regular', sans-serif";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../font/Al-Rashed\ Riyadh\ Reguler.ttf");
+    src: url("../font/Al-Rashed\ Riyadh\ Reguler.ttf") format("embedded-opentype"), url("http://35.187.53.140/wp-content/uploads/2023/02/subset-MadaniArabic-SemiBold.woff2") format("woff2"), url("http://35.187.53.140/wp-content/uploads/2023/02/subset-MadaniArabic-SemiBold.woff") format("woff"), url("http://35.187.53.140/wp-content/uploads/2023/02/subset-MadaniArabic-SemiBold.svg") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Al-Rashed Riyadh Regular', sans-serif";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../font/Al-Rashed\ Riyadh\ Reguler.ttf");
+    src: url("../font/Al-Rashed\ Riyadh\ Reguler.ttf") format("embedded-opentype"), url("http://35.187.53.140/wp-content/uploads/2023/02/subset-MadaniArabic-Regular.woff2") format("woff2"), url("http://35.187.53.140/wp-content/uploads/2023/02/subset-MadaniArabic-Regular.woff") format("woff"), url("http://35.187.53.140/wp-content/uploads/2023/02/subset-MadaniArabic-Regular.svg") format("svg");
+    font-display: swap;
+}
+
