@@ -1,5 +1,6 @@
 .env*
 rav.yaml
+.idea/
 mohaseb_test_bucket_cors_file.json
 # Byte-compiled / optimized / DLL files
 __pycache__/
