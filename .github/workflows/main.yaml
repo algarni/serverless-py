@@ -44,12 +44,13 @@ jobs:
         run: |
           docker build -f Dockerfile -t mohaseb-test .
           docker tag mohaseb-test ${{secrets.CONTAINER_IMAGE_URL}}:latest
+          docker tag mohaseb-test ${{secrets.CONTAINER_IMAGE_URL}}:${GITHUB_RUN_ID}
           gcloud auth configure-docker ${{secrets.GCLOUD_REGION}}-docker.pkg.dev
           docker push us-central1-docker.pkg.dev/mohaseb-app/mohaseb-test-repo/mohaseb-test:latest
       - name: Deploy container to Cloud Run
         run: |
           - gcloud run deploy mohaseb-test-run \
-          --image=${{secrets.CONTAINER_IMAGE_URL}}:latest \
+          --image=${{secrets.CONTAINER_IMAGE_URL}}:${GITHUB_RUN_ID} \
           --allow-unauthenticated \
           --region=${{secrets.GCLOUD_REGION}} \
           --project=${{secrets.GCLOUD_PROJECT_ID}}
