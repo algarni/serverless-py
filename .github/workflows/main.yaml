@@ -25,7 +25,7 @@ jobs:
           MODE: "github actions"
         run: |
           pytest src/tests.py
-  build_push:
+  build_deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -35,8 +35,21 @@ jobs:
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
       - name: Build container image
         run: |
           docker build -f Dockerfile -t mohaseb-test .
-          docker tag mohaseb-test us-central1-docker.pkg.dev/mohaseb-app/mohaseb-test-repo/mohaseb-test:latest
+          docker tag mohaseb-test ${{secrets.CONTAINER_IMAGE_URL}}:latest
+          gcloud auth configure-docker ${{secrets.GCLOUD_REGION}}-docker.pkg.dev
           docker push us-central1-docker.pkg.dev/mohaseb-app/mohaseb-test-repo/mohaseb-test:latest
+      - name: Deploy container to Cloud Run
+        run: |
+          - gcloud run deploy mohaseb-test-run \
+          --image=${{secrets.CONTAINER_IMAGE_URL}}:latest \
+          --allow-unauthenticated \
+          --region=${{secrets.GCLOUD_REGION}} \
+          --project=${{secrets.GCLOUD_PROJECT_ID}}
