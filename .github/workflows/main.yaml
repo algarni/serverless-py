@@ -25,7 +25,7 @@ jobs:
           MODE: "github actions"
         run: |
           pytest src/tests.py
-  build_deploy:
+  build_push:
     needs: test
     runs-on: ubuntu-latest
     steps:
