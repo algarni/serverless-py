@@ -46,7 +46,7 @@ jobs:
           docker tag mohaseb-test ${{secrets.CONTAINER_IMAGE_URL}}:latest
           docker tag mohaseb-test ${{secrets.CONTAINER_IMAGE_URL}}:${GITHUB_RUN_ID}
           gcloud auth configure-docker ${{secrets.GCLOUD_REGION}}-docker.pkg.dev
-          docker push ${{secrets.CONTAINER_IMAGE_URL}}:latest
+          docker push ${{secrets.CONTAINER_IMAGE_URL}} --all-tags
       - name: Deploy container to Cloud Run
         run: |
           gcloud run deploy mohaseb-test-run \
