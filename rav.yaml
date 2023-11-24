@@ -24,3 +24,7 @@ scripts:
   push-deploy:
     - rav run push
     - rav run deploy
+  cloud_run_perms:
+    - gcloud secrets add-iam-policy-binding py_env_file --member='serviceAccount:901520558516-compute@developer.gserviceaccount.com' --role='roles/secretmanager.secretAccessor'
+  cloud_run_perms_remove:
+    - gcloud secrets remove-iam-policy-binding py_env_file --member='serviceAccount:901520558516-compute@developer.gserviceaccount.com' --role='roles/secretmanager.secretAccessor'
