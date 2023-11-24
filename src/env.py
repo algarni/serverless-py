@@ -80,8 +80,8 @@ class RepositoryString(RepositoryEmpty):
 
 @lru_cache()
 def get_config(use_gcloud=True):
-    # if ENV_PATH.exists():
-    #     return Config(RepositoryEnv(str(ENV_PATH)))
+    if ENV_PATH.exists():
+        return Config(RepositoryEnv(str(ENV_PATH)))
     if use_gcloud:
         payload = get_google_secret_payload()
         print(payload)
