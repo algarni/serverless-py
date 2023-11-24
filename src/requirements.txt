@@ -5,3 +5,5 @@ python-decouple
 pytest
 httpx
 jinja2
+google-auth
+google-cloud-secret-manager

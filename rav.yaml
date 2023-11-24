@@ -6,6 +6,8 @@ scripts:
     - docker image prune -f
   run: docker run -p 8080:8000 --rm --name mohaseb-test -it mohaseb-test
   shell: docker exec -it mohaseb-test /bin/bash
+  update_prod_secrets:
+    - gcloud secrets versions add py_env_file --data-file .env-prod
   build-run:
     - rav run build
     - rav run run
