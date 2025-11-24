@@ -15,8 +15,10 @@ scripts:
     - gcloud auth configure-docker us-central1-docker.pkg.dev
     - gcloud artifacts repositories create mohaseb-test-repo --repository-format=docker --location=us-central1
   push:
+#    - gcloud auth login
     - docker build -f Dockerfile -t mohaseb-test .
     - docker tag mohaseb-test us-central1-docker.pkg.dev/mohaseb-app/mohaseb-test-repo/mohaseb-test:latest
+    - docker image prune -f
     - docker push us-central1-docker.pkg.dev/mohaseb-app/mohaseb-test-repo/mohaseb-test:latest
   deploy:
     - gcloud run deploy mohaseb-test-run --image=us-central1-docker.pkg.dev/mohaseb-app/mohaseb-test-repo/mohaseb-test:latest
