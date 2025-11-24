@@ -141,7 +141,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+    <style>
+        /*
+Source - https://stackoverflow.com/a
+Posted by Mitali Patel
+Retrieved 2025-11-24, License - CC BY-SA 4.0
+*/
 
+.inner-container{
+   display:flex;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright-text {
+  text-align: left;
+  width: 50%;
+}
+
+.payment-methods {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.payment-methods img {
+  height: 30px;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .copyright-text,
+  .payment-methods {
+    width: 100%;
+    text-align: center;
+  }
+
+  .payment-methods {
+    justify-content: center;
+  }
+}
+    </style>
 
 </head>
 
@@ -1392,7 +1438,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                                                                                     <p><a href="{{ url_for('get_terms') }}">الشروط والأحكام</a></p>
                                                                                     <p><a href="{{ url_for('get_privacy') }}">سياسة الخصوصية</a></p>
-
+                                                                                     <!-- Payment Logos -->
+                                                                                    <div class="payment-methods">
+                                                                                        <img src="{{ STATIC_URL }}/img/Mada.svg"
+                                                                                             alt="Mada">
+                                                                                        <img src="{{ STATIC_URL }}/img/Mastercard.svg"
+                                                                                             alt="MasterCard">
+                                                                                        <img src="{{ STATIC_URL }}/img/Visa.svg"
+                                                                                             alt="Visa">
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
