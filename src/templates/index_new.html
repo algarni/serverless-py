@@ -4,12 +4,20 @@
 <head>
 
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W86N4C9F');</script>
-<!-- End Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W86N4C9F');</script>
+    <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8"/>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
@@ -143,50 +151,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <style>
         /*
-Source - https://stackoverflow.com/a
-Posted by Mitali Patel
-Retrieved 2025-11-24, License - CC BY-SA 4.0
-*/
+        Source - https://stackoverflow.com/a
+        Posted by Mitali Patel
+        Retrieved 2025-11-24, License - CC BY-SA 4.0
+        */
 
-.inner-container{
-   display:flex;
-}
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-}
 
-.copyright-text {
-  text-align: left;
-  width: 50%;
-}
+        .payment-methods {
+            display: flex;
+            justify-content: flex-end;
+            width: 50%;
+        }
 
-.payment-methods {
-  display: flex;
-  justify-content: flex-end;
-  width: 50%;
-}
+        .payment-methods img {
+            height: 30px;
+            margin-left: 10px;
+        }
 
-.payment-methods img {
-  height: 30px;
-  margin-left: 10px;
-}
+        @media (max-width: 768px) {
 
-@media (max-width: 768px) {
-  .footer-bottom {
-    flex-direction: column;
-  }
 
-  .copyright-text,
-  .payment-methods {
-    width: 100%;
-    text-align: center;
-  }
+            .payment-methods {
+                width: 100%;
+                text-align: center;
+            }
 
-  .payment-methods {
-    justify-content: center;
-  }
-}
+            .payment-methods {
+                justify-content: center;
+            }
+        }
     </style>
 
 </head>
@@ -196,8 +189,10 @@ Retrieved 2025-11-24, License - CC BY-SA 4.0
         itemscope="itemscope" itemtype="https://schemConsulting-Services-2a.org/WebPage">
 
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W86N4C9F"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W86N4C9F"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <a aria-label="Skip to content" class="fl-screen-reader-text" href="#fl-main-content">Skip to content</a>
@@ -1433,12 +1428,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                                                     <p>© 2023. جميع الحقوق محفوظة
                                                                                         لصالح <a href="#"
                                                                                                  target="_blank"
-                                                                                                 rel="noopener">Mohaseb</a>
+                                                                                                 rel="noopener">إضافة الرقمية</a>&nbsp;<span>سجل تجاري رقم: 7052046344</span>
                                                                                     </p>
 
-                                                                                    <p><a href="{{ url_for('get_terms') }}">الشروط والأحكام</a></p>
-                                                                                    <p><a href="{{ url_for('get_privacy') }}">سياسة الخصوصية</a></p>
-                                                                                     <!-- Payment Logos -->
+                                                                                    <p>
+                                                                                        <a href="{{ url_for('get_terms') }}">الشروط
+                                                                                            والأحكام</a></p>
+                                                                                    <p>
+                                                                                        <a href="{{ url_for('get_privacy') }}">سياسة
+                                                                                            الخصوصية</a></p>
+                                                                                    <!-- Payment Logos -->
                                                                                     <div class="payment-methods">
                                                                                         <img src="{{ STATIC_URL }}/img/Mada.svg"
                                                                                              alt="Mada">
@@ -1447,6 +1446,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                                                         <img src="{{ STATIC_URL }}/img/Visa.svg"
                                                                                              alt="Visa">
                                                                                     </div>
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
