@@ -26,6 +26,11 @@ async def get_terms(request: Request):
 async def get_privacy(request: Request):
     return templates.TemplateResponse("privacy.html", {"request": request, "STATIC_URL": STATIC_URL})
 
+@app.get("/contact-us")
+async def get_contact_us(request: Request):
+    return templates.TemplateResponse(
+        "contact_us.html", {"request": request, "STATIC_URL": STATIC_URL})
+
 @app.get("/mode")
 def get_mode():
     # JSON-ready dict -> json.dumps({"Hello": "World"})
