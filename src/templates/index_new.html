@@ -408,14 +408,16 @@
                                                                 <div class="fl-photo fl-photo-align-left" itemscope
                                                                      itemtype="https://schema.org/ImageObject">
                                                                     <div class="fl-photo-content fl-photo-img-png">
-                                                                        <img decoding="async" width="896"
-                                                                             height="748"
-                                                                             class="fl-photo-img wp-image-586"
-                                                                             src="{{ STATIC_URL }}/img/hero-section.png"
-                                                                             alt="banner-121" itemprop="image"
-                                                                             title="banner-121"
-                                                                             srcset="{{ STATIC_URL }}/img/hero-section.png 896w, {{ STATIC_URL }}/img/hero-section.png 768w"
-                                                                             sizes="(max-width: 896px) 100vw, 896px"/>
+                                                                        <a href="#form">
+                                                                            <img decoding="async" width="896"
+                                                                                 height="748"
+                                                                                 class="fl-photo-img wp-image-586"
+                                                                                 src="{{ STATIC_URL }}/img/hero-section.png"
+                                                                                 alt="banner-121" itemprop="image"
+                                                                                 title="banner-121"
+                                                                                 srcset="{{ STATIC_URL }}/img/hero-section.png 896w, {{ STATIC_URL }}/img/hero-section.png 768w"
+                                                                                 sizes="(max-width: 896px) 100vw, 896px"/>
+                                                                        </a>
                                                                     </div>
                                                                     {#                                                                        <div class="fl-photo-content fl-photo-img-png">#}
                                                                     {#																			<img decoding="async" width="896"#}
@@ -544,7 +546,7 @@
                                                             <div class="fl-module-content fl-node-content">
                                                                 <div
                                                                         class="fl-button-wrap fl-button-width-custom fl-button-right">
-                                                                    <a href="#section4" target="_self"
+                                                                    <a href="#form" target="_self"
                                                                        class="fl-button" role="button">
 																			<span class="fl-button-text">احصل على عرض
 																				أسعار الآن</span>
@@ -1300,7 +1302,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="fl-module fl-module-uabb-contact-form7 fl-node-ls7xkq91ngm6"
+                                                        <div id="form" dir="rtl"
+                                                             class="fl-module fl-module-uabb-contact-form7 fl-node-ls7xkq91ngm6"
                                                              data-node="ls7xkq91ngm6">
                                                             <!-- Zoho Bigin Contact Us Form -->
                                                             <style type='text/css'>
@@ -2486,9 +2489,15 @@
                                                                                         <a href="{{ url_for('get_terms') }}">الشروط
                                                                                             والأحكام</a></p>
                                                                                     <p>
+
                                                                                         <a href="{{ url_for('get_privacy') }}">سياسة
                                                                                             الخصوصية</a></p>
-                                                                                    <!-- Payment Logos -->
+
+                                                                                    <p>
+                                                                                        <a href="{{ url_for('get_contact_us') }}">اتصل
+                                                                                            بنا</a></p>
+                                                                                    <p>
+                                                                                        <!-- Payment Logos -->
                                                                                     <div class="payment-methods">
                                                                                         <img src="{{ STATIC_URL }}/img/Mada.svg"
                                                                                              alt="Mada">
